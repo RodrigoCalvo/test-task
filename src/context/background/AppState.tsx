@@ -22,11 +22,14 @@ const AppState = (props: any) => {
       payload: newState,
     });
   };
-  
+
   // TODO: Complete the addTransaction method
   const addTransaction = (transaction: Transaction) => {
-
-  }
+    dispatch({
+      type: Actions.SET_TRANSACTIONS,
+      payload: [transaction, ...state.transactions],
+    });
+  };
 
   return (
     <AppContext.Provider
