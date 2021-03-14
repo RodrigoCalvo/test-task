@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Grid, makeStyles, Typography } from '@material-ui/core';
 import useTransaction from '../../utils/useTransaction';
+import { Helmet } from 'react-helmet';
 
 const useStyles = makeStyles({
   root: {
@@ -84,6 +85,9 @@ const Send = () => {
 
   return (
     <div className={classes.root}>
+      <Helmet>
+        <title>{`Blank | Send`}</title>
+      </Helmet>
       <section className={classes.header}>
         <Typography variant="h5" component="h2" style={{ display: 'inline' }}>
           Send ether
