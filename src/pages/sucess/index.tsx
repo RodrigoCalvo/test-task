@@ -1,7 +1,7 @@
-import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { ReactComponent as SuccessIcon } from '../../assets/svgs/success.svg';
 import { Button, Typography, makeStyles } from '@material-ui/core';
+import { Helmet } from 'react-helmet';
 
 const useStyles = makeStyles({
   root: {
@@ -59,6 +59,9 @@ const Success = () => {
 
   return (
     <div className={classes.root}>
+      <Helmet>
+        <title>{`Blank | Sucess`}</title>
+      </Helmet>
       <section className={classes.highlight}>
         <SuccessIcon width="80px" />
         <Typography variant="h3">Success </Typography>

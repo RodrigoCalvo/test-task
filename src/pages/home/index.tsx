@@ -1,4 +1,3 @@
-import React from 'react';
 import { useHistory } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import { ReactComponent as Avatar } from '../../assets/svgs/account.svg';
@@ -10,6 +9,7 @@ import { formatAddress, formatCurrency } from '../../utils/index';
 import { Grid, makeStyles } from '@material-ui/core';
 import { Transaction } from '../../services/TransactionsService';
 import useTransaction from '../../utils/useTransaction';
+import { Helmet } from 'react-helmet';
 
 const useStyles = makeStyles({
   root: {
@@ -74,6 +74,9 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
+      <Helmet>
+        <title>{`Blank`}</title>
+      </Helmet>
       <section className={classes.header}>
         <div className={classes.avatarContainer}>
           <Avatar className={classes.avatar} />
