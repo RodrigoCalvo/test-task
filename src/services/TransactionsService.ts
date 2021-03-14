@@ -9,6 +9,7 @@ export interface Transaction {
   to: string;
   from: string;
   value: number;
+  when: Date;
 }
 
 export interface TransactionsServiceState {
@@ -32,12 +33,18 @@ export class TransactionsService extends BaseService<TransactionsServiceState> {
    * It adds a transaction to the list
    * TODO: Complete addTransaction code inside the Promise resolve function
    */
-  public async addTransaction(newTransaction: Transaction): Promise<void> {
-    return new Promise<void>((resolve) => {
+  public async addTransaction(newTransaction: Transaction): Promise<Transaction> {
+    return new Promise<Transaction>((resolve) => {
       setTimeout(() => {
         const { transactions } = this.getState();
-        this.updateState({ transactions: [newTransaction, ...transactions] });
-        resolve();
+        this.getListOfTransactions().then((trs) => {
+          console.log(trs);
+          this.updateState({ transactions: [newTransaction, ...transactions] });
+          this.getListOfTransactions().then((trs) => {
+            console.log(trs);
+          });
+        });
+        resolve(newTransaction);
       }, 300);
     });
   }
