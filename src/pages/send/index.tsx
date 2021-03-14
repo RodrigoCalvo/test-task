@@ -1,15 +1,9 @@
-import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
-import { useContext } from 'react';
-import AppContext from '../../context/background/AppContext';
-import { TransactionsService, Transaction } from '../../services/TransactionsService';
 import { Grid, makeStyles, Typography } from '@material-ui/core';
-import { transactionService } from '../..';
 import useTransaction from '../../utils/useTransaction';
 
 const useStyles = makeStyles({
@@ -81,27 +75,30 @@ const Send = () => {
   const handleNext = () => {
     const { values } = fields;
 
-    sendTransaction(values.address, Number(values.amount));
+    if (values.address !== '' && Number(values.amount) > 0) {
+      sendTransaction(values.address, Number(values.amount));
 
-    history.push('/success');
+      history.push('/success');
+    }
   };
 
   return (
     <div className={classes.root}>
       <section className={classes.header}>
-        <Typography variant="h6" component="h2" style={{ display: 'inline' }}>
-          Send Ether
+        <Typography variant="h5" component="h2" style={{ display: 'inline' }}>
+          Send ether
         </Typography>
         <IconButton
           onClick={handleBack}
-          style={{ paddingTop: '4px', float: 'right', display: 'inline' }}
+          style={{ paddingTop: '5px', float: 'right', display: 'inline' }}
         >
           <CloseIcon />
         </IconButton>
       </section>
       <section className={classes.highlight}>
-        <Grid container style={{ padding: '10px' }}>
+        <Grid container style={{ padding: '0 10px 25px' }}>
           <TextField
+            required={true}
             placeholder="Enter Public Address"
             label="Add Recipient"
             fullWidth
@@ -110,6 +107,7 @@ const Send = () => {
             onChange={(event) => handleFieldChange('address', event.target.value)}
           />
           <TextField
+            required={true}
             placeholder="Enter ETH Value"
             label="Add Amount"
             fullWidth
@@ -133,7 +131,7 @@ const Send = () => {
             variant="contained"
             onClick={handleNext}
           >
-            Next
+            Send
           </Button>
         </Grid>
       </Grid>
