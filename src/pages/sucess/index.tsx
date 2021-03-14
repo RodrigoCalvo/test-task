@@ -1,8 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-
 import { ReactComponent as SuccessIcon } from '../../assets/svgs/success.svg';
-import { Button, Link, Typography, makeStyles } from '@material-ui/core';
+import { Button, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {

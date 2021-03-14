@@ -5,7 +5,6 @@ import { ReactComponent as Avatar } from '../../assets/svgs/account.svg';
 import { ReactComponent as ETHIcon } from '../../assets/svgs/eth.svg';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import Typography from '@material-ui/core/Typography';
-
 import Constants from '../../constants';
 import { formatAddress, formatCurrency } from '../../utils/index';
 import { Grid, makeStyles } from '@material-ui/core';
@@ -68,7 +67,6 @@ const Home = () => {
   const classes = useStyles();
   const history = useHistory();
   const { state } = useTransaction();
-  console.log('actual state', state);
 
   const handleSend = () => {
     history.push('/send');

@@ -37,13 +37,7 @@ export class TransactionsService extends BaseService<TransactionsServiceState> {
     return new Promise<Transaction>((resolve) => {
       setTimeout(() => {
         const { transactions } = this.getState();
-        this.getListOfTransactions().then((trs) => {
-          console.log(trs);
-          this.updateState({ transactions: [newTransaction, ...transactions] });
-          this.getListOfTransactions().then((trs) => {
-            console.log(trs);
-          });
-        });
+        this.updateState({ transactions: [newTransaction, ...transactions] });
         resolve(newTransaction);
       }, 300);
     });

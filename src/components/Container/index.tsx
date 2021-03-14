@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   },
   container: {
     width: '100%',
-    maxWidth: '900px',
+    maxWidth: '800px',
     boxSizing: 'border-box',
     transition: 'all 0.2s',
   },
