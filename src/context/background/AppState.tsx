@@ -1,16 +1,15 @@
 import React, { useReducer } from 'react';
-import AppContext from './AppContext';
+import AppContext, { initAppState } from './AppContext';
 import AppReducer from './AppReducer';
 import Actions from '../contextActions';
 import { Transaction } from '../../services/TransactionsService';
 
 export interface IAppState {
   transactions: Array<Transaction>;
+  publicAddress: string;
+  accountBalance: number;
+  ethPrice: number;
 }
-
-export const initAppState: IAppState = {
-  transactions: [],
-};
 
 const AppState = (props: any) => {
   const [state, dispatch] = useReducer(AppReducer, initAppState);
