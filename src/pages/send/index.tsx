@@ -116,17 +116,18 @@ const Send = () => {
             label="Add Amount"
             fullWidth
             name="amount"
+            type="number"
             onChange={(event) => handleFieldChange('amount', event.target.value)}
           />
         </Grid>
       </section>
       <Grid container style={{ padding: '10px', marginTop: '25px' }}>
-        <Grid item xs={12} sm={6} style={{ display: 'flex', float: 'left' }}>
+        <Grid item xs={6} style={{ display: 'flex', float: 'left' }}>
           <Button onClick={handleBack} className={classes.button} variant="contained">
             Cancel
           </Button>
         </Grid>
-        <Grid item xs={12} sm={6} style={{ float: 'right' }}>
+        <Grid item xs={6} style={{ float: 'right' }}>
           <Button
             type="submit"
             className={classes.button}
