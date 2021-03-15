@@ -57,7 +57,7 @@ const useStyles = makeStyles({
 const Send = () => {
   const classes = useStyles();
   const history = useHistory();
-  const { sendTransaction } = useTransaction();
+  const { sendTransaction, state } = useTransaction();
   const handleBack = () => {
     history.goBack();
   };
@@ -77,9 +77,10 @@ const Send = () => {
     const { values } = fields;
 
     if (values.address !== '' && Number(values.amount) > 0) {
-      sendTransaction(values.address, Number(values.amount));
-
-      history.push('/success');
+      if (state.accountBalance >= Number(values.amount)) {
+        sendTransaction(values.address, Number(values.amount));
+        history.push('/success');
+      }
     }
   };
 

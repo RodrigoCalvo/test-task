@@ -31,8 +31,5 @@ export function getInitialTransactions() {
 }
 
 export function formateDate(date: Date) {
-  // const d = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-  // const t = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-  // return d + ' ' + t;
   return date.toLocaleDateString(LOCALE_INFO) + ' ' + date.toLocaleTimeString(LOCALE_INFO);
 }
