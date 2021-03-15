@@ -28,6 +28,9 @@ const AppState = (props: any) => {
       type: Actions.SET_TRANSACTIONS,
       payload: [transaction, ...state.transactions],
     });
+
+    state.accountBalance = parseFloat((state.accountBalance - transaction.value).toPrecision(8));
+    setState(state);
   };
 
   return (

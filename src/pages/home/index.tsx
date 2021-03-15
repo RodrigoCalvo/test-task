@@ -90,10 +90,10 @@ const Home = () => {
       </section>
       <section className={classes.highlight}>
         <Typography variant="h4" component="h4">
-          {Constants.accountBalance} ETH
+          {state.accountBalance} ETH
         </Typography>
         <Typography variant="body1" component="h5" color="textSecondary">
-          {`${formatCurrency(Constants.accountBalance * Constants.ethPrice)} USD`}
+          {`${formatCurrency(state.accountBalance * Constants.ethPrice)} USD`}
         </Typography>
         <IconButton className={classes.send} onClick={handleSend}>
           <ArrowUpwardIcon />
