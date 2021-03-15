@@ -66,7 +66,7 @@ const Success = () => {
         <SuccessIcon width="80px" />
         <Typography variant="h3">Success </Typography>
         <Typography variant="h4" style={{ textAlign: 'center', margin: '10px 0 25px' }}>
-          You've successfully sent your founds{' '}
+          You've successfully sent your funds
         </Typography>
 
         <Button href="https://etherscan.io/" target="blank">
