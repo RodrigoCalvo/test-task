@@ -5,7 +5,7 @@ import { ReactComponent as ETHIcon } from '../../assets/svgs/eth.svg';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import Typography from '@material-ui/core/Typography';
 import Constants from '../../constants';
-import { formatAddress, formatCurrency } from '../../utils/index';
+import { formatAddress, formatCurrency, formateDate } from '../../utils/index';
 import { Grid, makeStyles } from '@material-ui/core';
 import { Transaction } from '../../services/TransactionsService';
 import useTransaction from '../../utils/useTransaction';
@@ -119,7 +119,7 @@ const Home = () => {
             <Grid item xs={12}>
               <Grid item xs={12} sm={6} style={{ float: 'left' }}>
                 <Typography variant="subtitle1" color="textSecondary">
-                  {tx.when.toISOString()}
+                  {formateDate(tx.when)}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={6} style={{ float: 'right' }}>

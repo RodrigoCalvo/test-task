@@ -25,6 +25,7 @@ export default function useTransaction() {
       });
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(getTransactions, []);
 
   return { state, sendTransaction };

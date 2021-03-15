@@ -1,5 +1,5 @@
 interface ITransactionData {
-  date: string;
+  date: Date;
   amount: number;
   recipient: string;
 }
@@ -19,17 +19,17 @@ const SiteData: ISiteData = {
   ethPrice: 1700,
   pastTransactions: {
     0: {
-      date: '06-01-2021 19:00',
+      date: new Date(2020, 3, 14, 19, 0, 0, 0),
       amount: 3,
       recipient: '0xb19181c403D451A1e161b305eb08DfD422ffd6DD',
     },
     1: {
-      date: '06-01-2021 20:00',
+      date: new Date(2020, 3, 14, 20, 0, 0, 0),
       amount: 2,
       recipient: '0xb19181c403D451A1e161b305eb08DfD422ffd6DD',
     },
     2: {
-      date: '06-01-2021 21:00',
+      date: new Date(2020, 3, 14, 21, 0, 0, 0),
       amount: 3,
       recipient: '0xb19181c403D451A1e161b305eb08DfD422ffd6DD',
     },

@@ -65,10 +65,12 @@ const Success = () => {
       <section className={classes.highlight}>
         <SuccessIcon width="80px" />
         <Typography variant="h3">Success </Typography>
-        <Typography variant="h4">You've successfully sent your friends </Typography>
+        <Typography variant="h4" style={{ textAlign: 'center', margin: '10px 0 25px' }}>
+          You've successfully sent your founds{' '}
+        </Typography>
 
         <Button href="https://etherscan.io/" target="blank">
-          Viwe on Etherscan
+          View on Etherscan
         </Button>
       </section>
       <section className={classes.actions} style={{ marginTop: '15px' }}>

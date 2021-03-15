@@ -1,5 +1,7 @@
 import Constants from '../constants';
 import { Transaction } from '../services/TransactionsService';
+
+const LOCALE_INFO = 'en-US';
 export function formatAddress(address: string, chars = 4): string {
   if (!address) {
     throw Error(`Invalid 'address' parameter '${address}'.`);
@@ -8,7 +10,7 @@ export function formatAddress(address: string, chars = 4): string {
 }
 
 export function formatCurrency(amount: number) {
-  return amount.toLocaleString('en-US', {
+  return amount.toLocaleString(LOCALE_INFO, {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -26,4 +28,11 @@ export function getInitialTransactions() {
       when: new Date(Constants.pastTransactions[key].date),
     } as Transaction;
   });
+}
+
+export function formateDate(date: Date) {
+  // const d = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  // const t = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+  // return d + ' ' + t;
+  return date.toLocaleDateString(LOCALE_INFO) + ' ' + date.toLocaleTimeString(LOCALE_INFO);
 }
